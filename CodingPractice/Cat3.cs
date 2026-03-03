@@ -1,0 +1,1 @@
+class Cat3 : Animal3 { }
