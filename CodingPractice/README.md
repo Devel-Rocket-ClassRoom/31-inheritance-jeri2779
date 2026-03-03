@@ -298,7 +298,10 @@ False
 
 ## 12. 종합 예제: 게임 캐릭터 시스템
 
-`GameCharacter` 추상 클래스에 `Name`, `Health` 속성과 `Attack()` 추상 메서드, `ShowStatus()` 메서드를 정의하세요. `Warrior`와 `Mage` 클래스가 `GameCharacter`를 상속받아 각각의 공격 방식을 구현합니다. `GameCharacter[]` 배열로 캐릭터들을 관리하고 상태와 공격을 출력하세요.
+`GameCharacter` 추상 클래스에 `Name`, `Health` 속성과 `Attack()` 추상 메서드, 
+`ShowStatus()` 메서드를 정의하세요. `Warrior`와 `Mage` 클래스가 
+`GameCharacter`를 상속받아 각각의 공격 방식을 구현합니다. 
+`GameCharacter[]` 배열로 캐릭터들을 관리하고 상태와 공격을 출력하세요.
 
 **실행 결과**
 

@@ -186,7 +186,22 @@ using System;
 
 Console.WriteLine("## 12. 종합 예제: 게임 캐릭터 시스템");
 
-abstract class GameCharacter
+GameCharacter[] characters = new GameCharacter[]
+{
+    new Warrior("아서", 25),
+    new Mage("멀린", 40),
+    new Warrior("란슬롯", 30)
+};
+
+foreach (GameCharacter character in characters)
+{
+    character.ShowStatus();
+    character.Attack();
+    Console.WriteLine();
+}
+
+
+abstract class GameCharacter// 부모 클래스 추상 클래스로 직접 생성 불가  
 {
     public string Name;
     public int Health;
@@ -207,9 +222,9 @@ abstract class GameCharacter
 
 }
 
-abstract class Warrior : GameCharacter
+ class Warrior : GameCharacter // 자식 클래스
 {
-    public int Strength;
+    public int Strength;// 공격력
     public  Warrior(string name,int strength) : base(name, 150)
     {
         Strength = strength;
@@ -217,7 +232,23 @@ abstract class Warrior : GameCharacter
 
     public override void Attack()
     {
-        Console.WriteLine($"");
+        Console.WriteLine($"[{Name}]이(가) 검으로 {Strength} 대미지를 입힙니다.");
     }
+
+
+
 }
 
+ class Mage : GameCharacter // 자식 클래스
+{
+    public int MagicPower; // 마법 공격력
+    public Mage(string name, int magicPower) : base(name, 100)
+    {
+        MagicPower = magicPower;
+    }
+
+    public override void Attack()
+    {
+        Console.WriteLine($"[{Name}]이(가) 마법으로 {MagicPower} 대미지를 입힙니다.");
+    }
+}
